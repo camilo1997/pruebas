@@ -6,11 +6,13 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.rest.interactions.Delete;
 
+import java.util.logging.Logger;
+
 import static com.reto.utils.Constant.*;
 
 public class DeleteUser implements Task {
-
     private String idUser;
+    private static final Logger LOGGER = Logger.getLogger(GetUserTo.class.getName());
 
     public DeleteUser(String idUser) {
         this.idUser = idUser;
@@ -18,6 +20,7 @@ public class DeleteUser implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        LOGGER.info("Eliminando el usuario con id "+idUser);
         actor.attemptsTo(
                 Delete.from(PATH_USER.concat(idUser)).with(
                         requestSpecification -> requestSpecification
@@ -25,7 +28,6 @@ public class DeleteUser implements Task {
                                 .relaxedHTTPSValidation()
                 )
         );
-
         SerenityRest.lastResponse().prettyPrint();
     }
 

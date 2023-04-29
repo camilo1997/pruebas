@@ -43,7 +43,7 @@ public class GetUserStep {
 
     @When("I get user by id incorrect")
     public void iGetUserByIdIncorrect() {
-        path = PATH_USER.concat("/").concat(userIdIncorrect());
+        path = PATH_USER.concat(userIdIncorrect());
         OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath(path).andAppId(APP_ID));
     }
 

@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/delete_user.feature",
+        features = "src/test/resources/features/update_user.feature",
         glue = "com.reto.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class DeleteUserRunner {
+public class UpdateUserRunner {
 }
