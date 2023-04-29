@@ -22,6 +22,14 @@ public class Generate {
         return new User(FAKER.name().firstName(), FAKER.name().lastName(), FAKER.animal().name()+"@gmail.com");
     }
 
+    public static User userWithoutEmail(){
+        return new User(FAKER.name().firstName(), FAKER.name().lastName());
+    }
+
+    public static User userWithEmailIncorrect(){
+        return new User(FAKER.name().firstName(), FAKER.name().lastName(), FAKER.bothify("#######"));
+    }
+
     public static String idRandom(int id){
         Map<Integer, String> ids = new HashMap<>();
         ids.put(1,"60d0fe4f5311236168a109ca");
