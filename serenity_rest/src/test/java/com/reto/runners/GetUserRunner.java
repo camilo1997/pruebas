@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/get_user.feature",
         glue = "com.reto.stepdefinitions",
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@GetAllAppIdNotExist"
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class GetAllUsersRunner {
+public class GetUserRunner {
 }
