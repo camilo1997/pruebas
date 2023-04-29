@@ -1,0 +1,20 @@
+package com.reto.tasks.builder;
+
+import com.reto.tasks.GetUserTo;
+import net.serenitybdd.screenplay.Tasks;
+
+public class GetUser {
+    private String path;
+
+    public GetUser(String path) {
+        this.path = path;
+    }
+
+    public static GetUser withPath(String path){
+        return new GetUser(path);
+    }
+
+    public GetUserTo andAppId(String appId){
+        return Tasks.instrumented(GetUserTo.class, path, appId);
+    }
+}
