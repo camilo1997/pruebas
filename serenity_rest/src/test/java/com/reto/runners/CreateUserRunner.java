@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/create_user.feature",
         glue = "com.reto.stepdefinitions",
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@CreateUserWithEmailIncorrect"
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class CreateUserRunner {
 }

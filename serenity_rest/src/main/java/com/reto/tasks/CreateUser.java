@@ -27,7 +27,7 @@ public class CreateUser implements Task {
         LOGGER.info("Creando el usuario");
 
         actor.attemptsTo(Post.to(PATH_USER_CREATE).with(
-                requestSpecification -> requestSpecification.header("","")
+                requestSpecification -> requestSpecification.header("app-id", APP_ID)
                         .body(user).relaxedHTTPSValidation()
         ));
         SerenityRest.lastResponse().prettyPrint();
