@@ -1,6 +1,7 @@
 package com.reto.utils;
 
 import com.github.javafaker.Faker;
+import com.reto.models.User;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -15,6 +16,10 @@ public class Generate {
 
     public static String userIdIncorrect(){
         return FAKER.bothify("#########");
+    }
+
+    public static User user(){
+        return new User(FAKER.name().firstName(), FAKER.name().lastName(), FAKER.animal().name()+"@gmail.com");
     }
 
     public static String idRandom(int id){
