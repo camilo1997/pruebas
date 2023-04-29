@@ -33,6 +33,7 @@ dependencies {
     testImplementation "org.junit.platform:junit-platform-launcher:1.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.vintage:junit-vintage-engine:5.8.2"
+    implementation 'org.json:json:20230227'
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: '2.0.70'
 }
 
