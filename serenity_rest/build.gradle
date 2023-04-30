@@ -24,6 +24,11 @@ ext {
     serenityCucumberVersion = "3.7.1"
 }
 
+task aggregate(type: TestReport) {
+    destinationDir = file("$buildDir/reports/tests/aggregate")
+    reportOn subprojects*.test
+}
+
 dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-junit5:$rootProject.ext.serenityVersion"
@@ -33,6 +38,7 @@ dependencies {
     testImplementation "org.junit.platform:junit-platform-launcher:1.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.vintage:junit-vintage-engine:5.8.2"
+    testImplementation 'junit:junit:4.13'
     implementation 'org.json:json:20230227'
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: '2.0.70'
 }
