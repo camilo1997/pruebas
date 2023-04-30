@@ -26,3 +26,10 @@ Feature: Get users to dummyapi
     When I get all users with appid incorrect
     Then I see the response code 403
     And I see that message error id not exist
+
+  @GetAllUserWithPathIncorrect
+  Scenario: Get all users with path incorrect
+    When I get all users with path incorrect
+    Then I see the response code 404
+    And I see that message error path not found
+

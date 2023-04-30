@@ -47,6 +47,11 @@ public class GetUserStep {
         OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath(path).andAppId(APP_ID));
     }
 
+    @When("I get all users with path incorrect")
+    public void iGetAllUsersWithPathIncorrect() {
+        OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath("users").andAppId(APP_ID));
+    }
+
     @Then("I see the response code {int}")
     public void iSeeTheResponseCode(Integer response) {
         OnStage.theActorInTheSpotlight().should(seeThat(GetStatusCode.response(), Matchers.equalTo(response)));
@@ -65,5 +70,9 @@ public class GetUserStep {
     @Then("I see that message params not valid")
     public void iSeeThatMessageParamsNotValid() {
         OnStage.theActorInTheSpotlight().should(seeThat(GetLastResponse.ofResponse(), Matchers.containsString("PARAMS_NOT_VALID")));
+    }
+    @Then("I see that message error path not found")
+    public void iSeeThatMessageErrorPathNotFound() {
+        OnStage.theActorInTheSpotlight().should(seeThat(GetLastResponse.ofResponse(), Matchers.containsString("PATH_NOT_FOUND")));
     }
 }
