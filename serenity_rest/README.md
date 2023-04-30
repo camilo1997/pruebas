@@ -1,6 +1,6 @@
 # Reto técnico Lulo bank API
 Reto para realizar una regresión automatica de la API https://dummyapi.io/.
-Proyecto dónde se utilizó serenity rest assure con el patrón de diseño Screenplay, cucumber y gradle como gestor de dependencias.
+Proyecto dónde se utilizó serenity rest assured con el patrón de diseño Screenplay, cucumber y gradle como gestor de dependencias.
 
 ## Herramientas necesarias para la ejecución del proyecto
 
