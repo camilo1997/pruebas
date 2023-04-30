@@ -1,5 +1,6 @@
 package com.reto.stepdefinitions;
 
+import com.reto.questions.GetFirstId;
 import com.reto.questions.GetLastResponse;
 import com.reto.questions.GetStatusCode;
 import com.reto.tasks.builder.GetUser;
@@ -37,8 +38,9 @@ public class GetUserStep {
 
     @When("I get user by id")
     public void iGetUserById() {
-        path = PATH_USER.concat("/").concat(idRandom(generateNumRandom()));
-        OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath(path).andAppId(APP_ID));
+        OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath(PATH_USER).andAppId(APP_ID));
+        String idUser = OnStage.theActorInTheSpotlight().asksFor(GetFirstId.toAllUsers());
+        OnStage.theActorInTheSpotlight().attemptsTo(GetUser.withPath(PATH_USER.concat(idUser)).andAppId(APP_ID));
     }
 
     @When("I get user by id incorrect")
