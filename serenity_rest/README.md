@@ -11,4 +11,4 @@ Proyecto dónde se utilizó serenity rest assured con el patrón de diseño Scre
 
 * Clonar el repositorio
 * Ejecutar en la terminal (raíz del proyecto) "gradle clean test"
-* Para realizar ejecuciones paralelas "./gradlew clean test -PmaxParallelForks=2 --tests *GetUserRunner --tests *DeleteUserRunner  aggregate -i"
+* Para realizar ejecuciones paralelas "./gradlew clean test -PmaxParallelForks=2 aggregate -i"
