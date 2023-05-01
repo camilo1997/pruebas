@@ -3,6 +3,8 @@ package com.reto.runners;
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
+import net.thucydides.core.annotations.concurrency.Concurrency;
+import net.thucydides.core.annotations.concurrency.ThreadCount;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(

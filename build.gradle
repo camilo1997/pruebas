@@ -34,6 +34,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-junit5:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
     testImplementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation 'net.serenity-bdd:serenity-core:2.5.8'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation "org.junit.platform:junit-platform-launcher:1.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.8.2"
