@@ -1,5 +1,0 @@
-{
-  "firstName": "#(firstName)",
-  "lastName": "#(lastName)",
-  "email": "#(email)"
-}
