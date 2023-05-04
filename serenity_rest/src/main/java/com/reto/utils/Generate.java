@@ -19,7 +19,7 @@ public class Generate {
     }
 
     public static User user(){
-        return new User(FAKER.name().firstName(), FAKER.name().lastName(), FAKER.animal().name()+"@gmail.com");
+        return new User(FAKER.name().firstName(), FAKER.name().lastName(), FAKER.animal().name().concat(FAKER.bothify("####"))+"@gmail.com");
     }
 
     public static User userWithoutEmail(){

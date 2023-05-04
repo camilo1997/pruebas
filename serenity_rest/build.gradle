@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
 
 group = 'com.reto'
 version = '1.0-SNAPSHOT'
@@ -15,18 +16,13 @@ buildscript {
         }
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:3.6.22")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.2.0")
     }
 }
 
 ext {
-    serenityVersion = "3.7.1"
-    serenityCucumberVersion = "3.7.1"
-}
-
-task aggregate(type: TestReport) {
-    destinationDir = file("$buildDir/reports/tests/aggregate")
-    reportOn subprojects*.test
+    serenityVersion = "3.6.12"
+    serenityCucumberVersion = "3.6.12"
 }
 
 dependencies {
@@ -44,5 +40,8 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        excludeTags("disabled")
+    }
+    finalizedBy('aggregate')
 }
